@@ -1,0 +1,1117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>ERSAGA Hardware & Paints Inc</title>
+    
+    </head>
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Bangers&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-navy: #0a192f;
+            --panel-navy: #112240;
+            --accent-maroon: #800000;
+            --hot-maroon: #b30000;
+            --text-silver: #ccd6f6;
+            --nav-height: 80px;
+        }
+
+        * { cursor: crosshair !important; }
+
+        body {
+            background-color: var(--bg-navy);
+            color: var(--text-silver);
+            font-family: 'JetBrains Mono', monospace;
+            margin: 0;
+            padding-top: var(--nav-height);
+            overflow-x: hidden;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            background: rgba(10, 25, 47, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--accent-maroon);
+            height: var(--nav-height);
+            transition: 0.3s;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-family: 'Orbitron', sans-serif;
+            color: white !important;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-link {
+            color: var(--text-silver) !important;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin: 0 15px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover { color: var(--hot-maroon) !important; }
+
+        /* --- BUTTONS --- */
+        .cta-btn-hardware { 
+            background: var(--accent-maroon); 
+            color: white; 
+            padding: 16px 45px; 
+            border: none; 
+            font-family: 'Orbitron', sans-serif; 
+            font-weight: bold; 
+            text-decoration: none; 
+            transition: 0.3s; 
+            display: inline-block; 
+            box-shadow: 5px 5px 0px #000;
+            text-transform: uppercase;
+        }
+
+        .cta-btn-hardware:hover {
+            background: var(--hot-maroon);
+            transform: translate(-2px, -2px);
+            box-shadow: 7px 7px 0px #000;
+            color: white;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-landscape {
+            min-height: calc(100vh - var(--nav-height));
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden; padding: 40px 20px;
+            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('ERSAGA (43).png'); 
+            background-size: cover; background-position: center; background-attachment: fixed;
+            border-bottom: 5px solid var(--accent-maroon);
+        }
+
+        .landscape-container { display: flex; flex-direction: row; align-items: center; gap: 50px; z-index: 10; max-width: 1200px; width: 100%; }
+        .main-logo {
+    width: 350px;
+    height: 350px;
+    /* Changed from 50% to 0 for a sharp square, or 4px for a slight edge */
+    border-radius: 0px; 
+    border: 8px solid var(--accent-maroon);
+    box-shadow: 10px 10px 0px #000; /* Industrial drop shadow */
+    background: white;
+    padding: 20px;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover effect for the square holder */
+.main-logo:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 15px 15px 0px var(--hot-maroon);
+}
+
+.logo-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Optional: Mobile adjustment to keep it square and responsive */
+@media (max-width: 768px) {
+    .main-logo {
+        width: 280px;
+        height: 280px;
+        margin: 0 auto;
+    }
+}
+        .welcome-text { font-family: 'Bangers', cursive; font-size: 5.5rem; color: white; text-shadow: 5px 5px 0px var(--accent-maroon); line-height: 0.9; margin-bottom: 20px; }
+        .brand-title { font-family: 'Orbitron', sans-serif; font-size: 2rem; color: #fff; border-left: 6px solid var(--hot-maroon); padding-left: 20px; margin-bottom: 30px; }
+        .tag-item { background: var(--accent-maroon); color: white; padding: 6px 18px; font-weight: bold; font-size: 0.85rem; text-transform: uppercase; clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%); }
+
+        /* --- PRODUCT STYLES --- */
+        .product-section {
+            padding: 80px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .section-header {
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 50px;
+        }
+
+        .section-header h3 {
+            display: inline-block;
+            border-left: 5px solid var(--hot-maroon);
+            padding-left: 15px;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .product-card {
+            background: var(--panel-navy);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            height: 100%;
+            transition: 0.4s;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: scale(1.03);
+            border-color: var(--hot-maroon);
+            box-shadow: 0 0 20px rgba(179, 0, 0, 0.3);
+        }
+
+        .product-card .img-container {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.9);
+            transition: 0.3s;
+        }
+
+        .product-card:hover img {
+            filter: brightness(1.1);
+        }
+
+        .p-name { font-family: 'Orbitron', sans-serif; color: white; font-size: 0.9rem; flex-grow: 1; }
+        .p-price { color: var(--hot-maroon); font-weight: bold; margin-top: 10px; font-size: 1.1rem; }
+
+        /* --- ABOUT SECTION --- */
+        #about {
+            position: relative;
+            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), url('bg about us.jpeg'); 
+            background-size: cover; background-position: center; background-attachment: fixed; padding: 100px 0;
+        }
+
+        .about-img-frame { position: relative; border: 3px solid var(--hot-maroon); padding: 15px; background: rgba(17, 34, 64, 0.5); }
+        .about-img-frame img { width: 100%; filter: grayscale(30%); transition: 0.5s; }
+        .about-badge { background: var(--hot-maroon); color: white; padding: 10px 20px; font-family: 'Orbitron', sans-serif; display: inline-block; margin-bottom: 15px; }
+
+        /* --- MODAL STYLES --- */
+        .modal-content {
+            border: 2px solid var(--accent-maroon) !important;
+            color: var(--text-silver);
+            background: var(--panel-navy) !important;
+        }
+
+        .form-control {
+            background: rgba(0,0,0,0.5) !important;
+            border: 1px solid rgba(255,255,255,0.2) !important;
+            color: white !important;
+        }
+
+        @media (max-width: 768px) {
+            .welcome-text { font-size: 3.5rem; }
+            .landscape-container { flex-direction: column; text-align: center; }
+            .brand-title { border-left: none; border-bottom: 4px solid var(--hot-maroon); padding-left: 0; padding-bottom: 10px; }
+            .tagline-list { justify-content: center; }
+        }
+
+        /* FLOATING CART STYLES */
+.floating-cart-btn {
+    position: fixed;
+    bottom: 30px; /* Distansya mula sa baba */
+    right: 30px;  /* Distansya mula sa kanan */
+    width: 65px;
+    height: 65px;
+    background: var(--accent-maroon);
+    color: white;
+    border: 3px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer !important;
+    z-index: 2000; /* Para laging nasa ibabaw */
+    box-shadow: 5px 5px 0px #000;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.floating-cart-btn:hover {
+    background: var(--hot-maroon);
+    transform: scale(1.1) rotate(-10deg);
+}
+
+.floating-cart-btn #cart-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.7rem;
+    padding: 5px 8px;
+    border: 2px solid #000;
+}
+
+/* Para hindi matakpan ang icon kapag mobile */
+@media (max-width: 768px) {
+    .floating-cart-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+        font-size: 1.2rem;
+    }
+}
+    </style>
+</head>
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="ersaga main logo.jpeg">
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="bi bi-tools me-2"></i> ERSAGA <span class="text-danger ms-1">INC.</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#milestones">Painting & Finishing Tool</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#accessories">Cleaning & Polishing Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#prints">Power Tools Accessories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <button class="cta-btn-hardware py-2 px-4" style="font-size: 0.8rem;" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <i class="bi bi-person-fill"></i> Login
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FLOATING CART BUTTON -->
+<button class="floating-cart-btn" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar">
+    <i class="bi bi-cart3"></i>
+    <span id="cart-count" class="badge rounded-pill bg-danger">0</span>
+</button>
+
+    <!-- HERO SECTION -->
+    <section class="hero-landscape" id="home">
+        <div class="container landscape-container">
+            <div class="brand-image-wrapper" data-aos="zoom-in">
+                <div class="main-logo text-center d-flex align-items-center justify-content-center" style="height: 350px; width: 350px; background: white; border-radius: 50%; overflow: hidden;">
+<div class="brand-image-wrapper" data-aos="zoom-in">
+    <div class="main-logo text-center d-flex align-items-center justify-content-center">
+        <img src="ersaga main logo.jpeg" alt="ERSAGA INC. Logo" class="logo-image">
+    </div>
+</div>
+                </div>
+            </div>
+            <div class="hero-text-content" data-aos="fade-left">
+                <h1 class="welcome-text">WELCOME TO</h1>
+                <h2 class="brand-title">ERSAGA HARDWARE & PAINTS INC.</h2>
+                <div class="tagline-list d-flex gap-2 flex-wrap mb-4">
+                    <div class="tag-item">Quality</div>
+                    <div class="tag-item">Durability</div>
+                    <div class="tag-item">Trust</div>
+                    <div class="tag-item">Service</div>
+                </div>
+                <p class="mb-5 fs-5">Premium industrial solutions and personalized artistic crafts.</p>
+                <div class="d-flex gap-3">
+                    <a href="#milestones" class="cta-btn-hardware">GO TO SHOP</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOGIN MODAL WITH VALIDATION -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" style="font-family: 'Orbitron', sans-serif;">LOGIN</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body p-4">
+                <!-- Idinagdag ang 'needs-validation' -->
+                <form id="loginForm" class="needs-validation" novalidate>
+                    <div class="mb-3 text-start">
+                        <label class="form-label small">EMAIL</label>
+                        <input type="email" class="form-control" placeholder="your@email.com" required>
+                        <div class="invalid-feedback">Please provide a valid email.</div>
+                    </div>
+                    <div class="mb-4 text-start">
+                        <label class="form-label small">PASSWORD</label>
+                        <input type="password" class="form-control" placeholder="Enter your Password" required minlength="6">
+                        <div class="invalid-feedback">Must be at least 6 characters long.</div>
+                    </div>
+                    <button type="submit" class="cta-btn-hardware w-100 mb-3">LOGIN</button>
+                    <div class="text-center">
+                        <p class="small mb-0">Don't have an account? <a href="#" class="modal-link" data-bs-toggle="modal" data-bs-target="#registerModal">Register dito</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- REGISTER MODAL WITH PASSWORD MATCH VALIDATION -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" style="font-family: 'Orbitron', sans-serif;">CREATE ACCOUNT</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body p-4">
+                <form id="registerForm" class="needs-validation" novalidate>
+                    <div class="mb-3 text-start">
+                        <label class="form-label small">FULL NAME</label>
+                        <input type="text" class="form-control" placeholder="Enter your Name" required>
+                        <div class="invalid-feedback">Please enter your name.</div>
+                    </div>
+                    <div class="mb-3 text-start">
+                        <label class="form-label small">EMAIL</label>
+                        <input type="email" class="form-control" placeholder="your@email.com" required>
+                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                    </div>
+                    <div class="mb-3 text-start">
+                        <label class="form-label small">PASSWORD</label>
+                        <input type="password" class="form-control" id="regPass" placeholder="Min. 8 characters" required minlength="8">
+                        <div class="invalid-feedback">Must be at least 8 characters long.</div>
+                    </div>
+                    <!-- CONFIRM PASSWORD FIELD -->
+                    <div class="mb-4 text-start">
+                        <label class="form-label small">CONFIRM PASSWORD</label>
+                        <input type="password" class="form-control" id="confirmPass" placeholder="Repeat your password" required>
+                        <div id="passwordError" class="invalid-feedback">Passwords do not match.</div>
+                    </div>
+                    <button type="submit" class="cta-btn-hardware w-100 mb-3">REGISTER</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CART SIDEBAR -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartSidebar" aria-labelledby="cartSidebarLabel" style="background: var(--panel-navy); border-left: 3px solid var(--accent-maroon); color: white;">
+    <div class="offcanvas-header border-bottom border-secondary">
+        <h5 class="offcanvas-title" id="cartSidebarLabel" style="font-family: 'Orbitron';">YOUR CART</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div id="cart-items-container">
+            <!-- Dito lilitaw ang mga items -->
+            <p class="text-center opacity-50 mt-5">Empty Cart</p>
+        </div>
+    </div>
+    <div class="offcanvas-footer p-4 border-top border-secondary">
+        <div class="d-flex justify-content-between mb-3">
+            <span class="font-family-orbitron">TOTAL:</span>
+            <span id="cart-total" class="fw-bold text-danger">₱0.00</span>
+        </div>
+        <button class="cta-btn-hardware w-100" onclick="validateCheckout()">CHECKOUT</button>
+    </div>
+</div>
+
+<!-- JAVASCRIPT VALIDATION SCRIPT (Ilagay bago mag-wakas ang </body>) -->
+<script>
+    (() => {
+        'use strict'
+        // Kunin ang lahat ng forms na gustong lagyan ng validation
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop sa kanila at pigilan ang submission kung invalid
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                } else {
+                    // Dito papasok ang logic kapag success (e.g. Alert or API call)
+                    event.preventDefault();
+                    alert('Success! Your request is being processed.');
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+</script>
+
+<style>
+    /* Dagdag na style para sa validation colors */
+    .form-control:focus {
+        border-color: var(--hot-maroon) !important;
+        box-shadow: 0 0 8px rgba(179, 0, 0, 0.5) !important;
+    }
+    .was-validated .form-control:valid {
+        border-color: #198754 !important;
+        background-image: none;
+    }
+    .was-validated .form-control:invalid {
+        border-color: #dc3545 !important;
+        background-image: none;
+    }
+    .invalid-feedback {
+        color: #ff4d4d !important;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.7rem;
+    }
+</style>
+
+    <!-- PRODUCT SECTION 1: PAINTING & FINISHING TOOL-->
+    <section id="milestones" class="product-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-right">
+                <h3>PAINTING & FINISHING TOOL</h3>
+                <p class="text-silver opacity-50">Premium industrial solutions and personalized artistic crafts.</p>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
+                <div class="col" data-aos="fade-up">
+                    <div class="product-card">
+                        <div class="img-container"><img src="putty knife (2).jpg" alt="PUTTY KNIFE"></div>
+                        <h4 class="p-name">PUTTY KNIFE</h4>
+                        <p class="p-price">₱20.00</p>
+                        <div class="quantity-grp">
+    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+    <input type="number" class="qty-input" value="1" min="1">
+    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+</div>
+<button class="cta-btn-hardware add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card">
+                        <div class="img-container"><img src="cement trowel (1).jpeg" alt="CEMENT TROWEL"></div>
+                        <h4 class="p-name">CEMENT TROWEL</h4>
+                        <p class="p-price">₱80.00</p>
+                        <div class="quantity-grp">
+    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+    <input type="number" class="qty-input" value="1" min="1">
+    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+</div>
+<button class="cta-btn-hardware add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="img-container"><img src="plastering trowel (1).webp" alt="PLASTERING TROWEL"></div>
+                        <h4 class="p-name">PLASTERING TROWEL </h4>
+                        <p class="p-price">₱250.00</p>
+                        <div class="quantity-grp">
+    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+    <input type="number" class="qty-input" value="1" min="1">
+    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+</div>
+<button class="cta-btn-hardware add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="img-container"><img src="wall scraper (1).jpeg" alt="WALL SCRAPER 6 IN"></div>
+                        <h4 class="p-name">WALL SCRAPER 6 IN</h4>
+                        <p class="p-price">₱90.00</p>
+                        <div class="quantity-grp">
+    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+    <input type="number" class="qty-input" value="1" min="1">
+    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+</div>
+<button class="cta-btn-hardware add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="400">
+                    <div class="product-card">
+                        <div class="img-container"><img src="wall scraper 10in (1).jpeg" alt="WALL SCAPER 10 IN"></div>
+                        <h4 class="p-name">WALL SCRAPER 10 IN</h4>
+                        <p class="p-price">₱125.00</p>
+                        <div class="quantity-grp">
+    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+    <input type="number" class="qty-input" value="1" min="1">
+    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+</div>
+<button class="cta-btn-hardware add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT SECTION 2: CLEANING & POLISHING TOOLS -->
+    <section id="accessories" class="product-section">
+        <div class="container">
+            <div class="section-header text-end" data-aos="fade-left">
+                <h3 style="border-left: none; border-right: 5px solid var(--hot-maroon); padding-right: 15px;">CLEANING & POLISHING TOOLS</h3>
+                <p class="text-silver opacity-50">Premium industrial solutions and personalized artistic crafts.</p>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
+                <div class="col" data-aos="zoom-in">
+                    <div class="product-card">
+                        <div class="img-container"><img src="cable tie (1).jpg" alt="CABLE TIE"></div>
+                        <h4 class="p-name">CABLE TIE</h4>
+                        <p class="p-price">₱40.00</p>
+                        <div class="quantity-grp">
+    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+    <input type="number" class="qty-input" value="1" min="1">
+    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+</div>
+<button class="cta-btn-hardware add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="col" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="product-card">
+                        <div class="img-container"><img src="microfiber towel (1).jpeg" alt="MICROFIBER TOWEL"></div>
+                        <h4 class="p-name">MICROFIBER TOWEL</h4>
+                        <p class="p-price">₱180.00</p>
+                        <div class="quantity-grp">
+    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+    <input type="number" class="qty-input" value="1" min="1">
+    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+</div>
+<button class="cta-btn-hardware add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="col" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="img-container"><img src="wool foam pad (1).jpg" alt="WOOL FOAM PAD"></div>
+                        <h4 class="p-name">WOOL FOAM PAD</h4>
+                        <p class="p-price">₱940.00</p>
+                        <div class="quantity-grp">
+    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+    <input type="number" class="qty-input" value="1" min="1">
+    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+</div>
+<button class="cta-btn-hardware add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="col" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="img-container"><img src="backing pad (1).jpg" alt="BACKING PAD"></div>
+                        <h4 class="p-name">BACKING PAD</h4>
+                        <p class="p-price">₱480.00</p>
+                        <div class="quantity-grp">
+    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+    <input type="number" class="qty-input" value="1" min="1">
+    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+</div>
+<button class="cta-btn-hardware add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="col" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="product-card">
+                        <div class="img-container"><img src="stretch film (2).jpg" alt="STRETCH FILM"></div>
+                        <h4 class="p-name">STRETCH FILM</h4>
+                        <p class="p-price">₱65.00</p>
+                        <div class="quantity-grp">
+    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+    <input type="number" class="qty-input" value="1" min="1">
+    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+</div>
+<button class="cta-btn-hardware add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT SECTION 3: POWER TOOLS ACCESORIES -->
+    <section id="prints" class="product-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-right">
+                <h3>POWER TOOLS ACCESORIES</h3>
+                <p class="text-silver opacity-50">Premium industrial solutions and personalized artistic crafts.</p>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
+                <div class="col" data-aos="fade-up">
+                    <div class="product-card">
+                        <div class="img-container"><img src="cut-off wheel (1).avif" alt="CUT-OFF WHEEL"></div>
+                        <h4 class="p-name">CUT-OFF WHEEL</h4>
+                        <p class="p-price">₱18.75 /ea</p>
+                        <div class="quantity-grp">
+    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+    <input type="number" class="qty-input" value="1" min="1">
+    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+</div>
+<button class="cta-btn-hardware add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card">
+                        <div class="img-container"><img src="grinding wheel.jpeg" alt="GRINDING WHEEL"></div>
+                        <h4 class="p-name">GRINDING WHEEL</h4>
+                        <p class="p-price">₱30.00</p>
+                        <div class="quantity-grp">
+    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+    <input type="number" class="qty-input" value="1" min="1">
+    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+</div>
+<button class="cta-btn-hardware add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="img-container"><img src="flap disc.webp" alt="FLAP DISC"></div>
+                        <h4 class="p-name">FLAP DISC</h4>
+                        <p class="p-price">₱35.00 Set</p>
+                        <div class="quantity-grp">
+    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+    <input type="number" class="qty-input" value="1" min="1">
+    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+</div>
+<button class="cta-btn-hardware add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="img-container"><img src="cup brush (1).webp" alt="CUP BRUSH"></div>
+                        <h4 class="p-name">CUP BRUSH</h4>
+                        <p class="p-price">₱140.00</p>
+                        <div class="quantity-grp">
+    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+    <input type="number" class="qty-input" value="1" min="1">
+    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+</div>
+<button class="cta-btn-hardware add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="400">
+                    <div class="product-card">
+                        <div class="img-container"><img src="diamond cutting wheel (1).jpg" alt="DIAMOND CUTTING WHEEL"></div>
+                        <h4 class="p-name">DIAMOND CUTTING WHEEL</h4>
+                        <p class="p-price">₱190.00</p>
+                        <div class="quantity-grp">
+    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+    <input type="number" class="qty-input" value="1" min="1">
+    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+</div>
+<button class="cta-btn-hardware add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Magdagdag ng Style para sa Quantity Selector sa loob ng <style> tag -->
+<style>
+    .quantity-grp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        gap: 5px;
+    }
+    .qty-btn {
+        background: var(--accent-maroon);
+        border: none;
+        color: white;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.2s;
+    }
+    .qty-btn:hover { background: var(--hot-maroon); }
+    .qty-input {
+        width: 50px;
+        height: 30px;
+        text-align: center;
+        background: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.2);
+        color: white;
+        font-family: 'JetBrains Mono', monospace;
+    }
+    /* Hide arrows in input number */
+    input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    
+    .add-to-cart-btn {
+        font-size: 0.7rem;
+        padding: 8px 15px;
+        width: 100%;
+        box-shadow: 3px 3px 0px #000;
+    }
+</style>
+
+        
+       
+<!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        let cart = [];
+        const cartCountBadge = document.getElementById('cart-count');
+        const cartTotalDisplay = document.getElementById('cart-total');
+        const cartItemsContainer = document.getElementById('cart-items-container');
+
+        // 1. QUANTITY CONTROL
+        function changeQty(btn, delta) {
+            const input = btn.parentElement.querySelector('.qty-input');
+            let val = parseInt(input.value) + delta;
+            if (val < 1) val = 1;
+            input.value = val;
+        }
+
+        // 2. ADD TO CART LOGIC
+        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const card = this.closest('.product-card');
+                const name = card.querySelector('.p-name').innerText;
+                const price = parseFloat(card.querySelector('.p-price').innerText.replace('₱', '').replace(',', ''));
+                const qty = parseInt(card.querySelector('.qty-input').value);
+
+                addToCart(name, price, qty);
+                
+                // Visual Feedback
+                const originalText = this.innerText;
+                this.innerText = "ADDED!";
+                this.style.background = "#198754";
+                setTimeout(() => {
+                    this.innerText = originalText;
+                    this.style.background = "var(--accent-maroon)";
+                }, 800);
+            });
+        });
+
+        function addToCart(name, price, qty) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.qty += qty;
+            } else {
+                cart.push({ name, price, qty });
+            }
+            renderCart();
+        }
+
+        // 3. RENDER CART UI
+        function renderCart() {
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+            let count = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-center opacity-50 mt-5">Empty Cart</p>';
+            } else {
+                cart.forEach((item, index) => {
+                    const itemTotal = item.price * item.qty;
+                    total += itemTotal;
+                    count += item.qty;
+
+                    const div = document.createElement('div');
+                    div.className = 'd-flex justify-content-between align-items-center mb-3 p-2 border-bottom border-secondary';
+                    div.innerHTML = `
+                        <div style="flex-grow: 1;">
+                            <h6 class="mb-0 small" style="font-family: 'Orbitron';">${item.name}</h6>
+                            <small class="opacity-50">${item.qty}x ₱${item.price.toFixed(2)}</small>
+                        </div>
+                        <div class="text-end">
+                            <div class="mb-1 fw-bold text-danger">₱${itemTotal.toFixed(2)}</div>
+                            <button class="btn btn-sm text-white p-0" onclick="removeFromCart(${index})">
+                                <i class="bi bi-trash small"></i>
+                            </button>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(div);
+                });
+            }
+
+            cartCountBadge.innerText = count;
+            cartTotalDisplay.innerText = `₱${total.toLocaleString(undefined, {minimumFractionDigits: 2})}`;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            renderCart();
+        }
+
+        // 4. COMBINED CHECKOUT LOGIC
+        function proceedToCheckout() {
+            if (cart.length === 0) {
+                alert("Your cart is empty.");
+                return;
+            }
+
+            const totalAmount = cartTotalDisplay.innerText;
+            const confirmOrder = confirm(`TOTAL ORDER: ${totalAmount}\n\n Are you sure about your orders? Click OK to proceed to payment.`);
+
+            if (confirmOrder) {
+                // Dito pwede mong ilagay ang redirection sa Payment Page o success modal
+                alert("Thank you for trusting ERSAGA INC.! Your order is now being processed.");
+                cart = []; // I-clear ang cart matapos ang order
+                renderCart();
+                
+                // Isara ang sidebar (kung gamit ang Bootstrap Offcanvas instance)
+                const cartSidebar = document.getElementById('cartSidebar');
+                const bsOffcanvas = bootstrap.Offcanvas.getInstance(cartSidebar);
+                if (bsOffcanvas) bsOffcanvas.hide();
+            }
+        }
+    </script>
+    
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="pb-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <span class="about-badge">EST. 2024</span>
+                    <h2 class="display-5 fw-bold mb-4" style="font-family: 'Orbitron', sans-serif;">BUILDING DREAMS WITH <span class="text-danger">ERSAGA</span></h2>
+                    <p class="text-silver mb-4">Quality hardware and creative solutions for every home and milestone.</p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="about-img-frame">
+                        <img src="download (41).jpeg" alt="Hardware" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer style="background: #050d1a; border-top: 5px solid var(--accent-maroon); padding: 60px 0 20px 0; position: relative;">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Brand Info -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <h4 style="font-family: 'Orbitron', sans-serif; color: white; margin-bottom: 20px;">
+                        ERSAGA <span class="text-danger">INC.</span>
+                    </h4>
+                    <p class="small text-silver opacity-75" style="line-height: 1.8;">
+                        Your reliable partner for high-quality hardware, paints, and personalized artworks. From building your home to preserving your memories, Ersaga is here for you.
+                    </p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-messenger"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-geo-alt-fill"></i></a>
+                    </div>
+                </div>
+
+               
+
+                
+               
+            <hr class="mt-5 mb-4" style="border-color: rgba(255,255,255,0.1);">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                   
+                </div>
+            </div>
+        </div>
+    </footer>
+
+   
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Function para sa Checkout process
+function processCheckout() {
+    // 1. Check kung may laman ang cart
+    if (cart.length === 0) {
+        alert("Your cart is empty! Please add items to your cart before proceeding to checkout.");
+        return;
+    }
+
+    // 2. Kunin ang total amount
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+    // 3. Mag-create ng Order Object (History)
+    const orderDetails = {
+        orderID: 'ERSG-' + Math.floor(Math.random() * 1000000),
+        date: new Date().toLocaleString(),
+        items: [...cart], // Copy ng cart items
+        totalAmount: total
+    };
+
+    // 4. I-save sa Order History (LocalStorage)
+    let history = JSON.parse(localStorage.getItem('ersaga_history')) || [];
+    history.push(orderDetails);
+    localStorage.setItem('ersaga_history', JSON.stringify(history));
+
+    // 5. Simulating Success
+    alert(`Order Successful!\nOrder ID: ${orderDetails.orderID}\nTotal: ₱${total.toFixed(2)}\n\n Thank you for trusting ERSAGA INC!`);
+
+    // 6. I-clear ang Cart
+    cart = [];
+    localStorage.setItem('ersaga_cart', JSON.stringify(cart));
+    updateCartUI();
+
+    // 7. Isara ang Sidebar (Optional)
+    const cartSidebar = document.getElementById('cartSidebar');
+    const bsOffcanvas = bootstrap.Offcanvas.getInstance(cartSidebar);
+    if (bsOffcanvas) bsOffcanvas.hide();
+}
+    </script>
+
+    
+    <script>
+    // --- CART LOGIC ---
+    let cart = JSON.parse(localStorage.getItem('ersaga_cart')) || [];
+
+    // Function para i-update ang UI ng Cart
+    function updateCartUI() {
+        const cartContainer = document.getElementById('cart-items-container');
+        const cartCount = document.getElementById('cart-count');
+        const cartTotal = document.getElementById('cart-total');
+        
+        cartContainer.innerHTML = '';
+        let total = 0;
+        let count = 0;
+
+        if (cart.length === 0) {
+            cartContainer.innerHTML = '<p class="text-center opacity-50 mt-5">Empty Cart</p>';
+        } else {
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                count += item.quantity;
+
+                cartContainer.innerHTML += `
+                    <div class="cart-item mb-3 p-2" style="background: rgba(255,255,255,0.05); border-left: 3px solid var(--hot-maroon);">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h6 class="mb-0" style="font-size: 0.9rem;">${item.name}</h6>
+                                <small class="text-secondary">₱${item.price.toFixed(2)} x ${item.quantity}</small>
+                            </div>
+                            <button class="btn btn-sm text-danger" onclick="removeFromCart(${index})"><i class="bi bi-trash"></i></button>
+                        </div>
+                        <div class="text-end mt-1">
+                            <span class="fw-bold">₱${itemTotal.toFixed(2)}</span>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        cartCount.innerText = count;
+        cartTotal.innerText = `₱${total.toFixed(2)}`;
+        localStorage.setItem('ersaga_cart', JSON.stringify(cart));
+    }
+
+    // Function para sa Quantity Buttons (+/-)
+    function changeQty(btn, delta) {
+        const input = btn.parentElement.querySelector('.qty-input');
+        let newVal = parseInt(input.value) + delta;
+        if (newVal < 1) newVal = 1;
+        input.value = newVal;
+    }
+
+    // Function para mag-add sa cart
+    document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const card = this.closest('.product-card');
+            const name = card.querySelector('.p-name').innerText;
+            const priceText = card.querySelector('.p-price').innerText;
+            const price = parseFloat(priceText.replace('₱', '').replace(',', ''));
+            const quantity = parseInt(card.querySelector('.qty-input').value);
+
+            // Check kung nasa cart na ang item
+            const existingItem = cart.find(item => item.name === name);
+
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({ name, price, quantity });
+            }
+  
+            updateCartUI();
+            
+            // Simple visual feedback
+            const originalText = this.innerText;
+            this.innerText = "ADDED!";
+            this.classList.replace('cta-btn-hardware', 'btn-success');
+            setTimeout(() => {
+                this.innerText = originalText;
+                this.classList.replace('btn-success', 'cta-btn-hardware');
+            }, 1000);
+        });
+    });
+
+    // Function para mag-remove
+    window.removeFromCart = function(index) {
+        cart.splice(index, 1);
+        updateCartUI();
+    }
+
+    // Initialize Cart on Load
+    document.addEventListener('DOMContentLoaded', updateCartUI);
+
+    // --- FORM VALIDATION --- (Existing)
+    (() => {
+        'use strict'
+        const forms = document.querySelectorAll('.needs-validation')
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                } else {
+                    event.preventDefault();
+                    alert('Success!');
+                }
+                form.classList.add('was-validated')
+            }, false)
+
+            
+        })
+    })()
+</script>
+<script>
+function validateCheckout() {
+    const cartContainer = document.getElementById('cart-items-container');
+    
+    // Check if the container has the "Empty Cart" text or is literally empty
+    // This looks for your default <p> tag or a lack of item rows
+    if (cartContainer.innerHTML.includes("Empty Cart") || cartContainer.children.length === 0) {
+        alert("Please put an item first!");
+    } else {
+        alert("Order Successful! Thank you for shopping with ERSAGA.");
+        // Optional: clear the cart or redirect here
+    }
+}
+
+</script>
+<!-- FOOTER CREDITS -->
+<footer class="footer-credits">
+    <div class="container text-center">
+        <p class="mb-0">© 2026 ERSAGA HARDWARE & PAINTS INC. All Rights Reserved.</p>
+        <small class="opacity-50">Industrial Solutions & Artistic Quality</small>
+    </div>
+</footer>
+
+<style>
+    .footer-credits {
+        background: var(--bg-navy);
+        padding: 40px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        color: var(--text-silver);
+        font-family: 'JetBrains Mono', monospace;
+        letter-spacing: 1px;
+    }
+</style>
+</body>
+</html>
